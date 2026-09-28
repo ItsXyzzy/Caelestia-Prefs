@@ -9,7 +9,10 @@ A Material 3 styled **Notes** tab for the [Caelestia](https://github.com/caelest
 - Battery popout: horizontal fill gauge, animated shimmer and green shift while charging
 ## Screenshots
 ### Light mode
+#### Battery Pop out 
 ![Battery Screenshot](screenshots/batt_1.png)
+![Battery Animation](screenshots/recording_20260928_19-34-47~2.mp4)
+#### Notes
 ![Notes Screenshot](screenshots/notes_1.png)
 ## Install
 
