@@ -8,6 +8,7 @@ A Material 3 styled **Notes** tab for the [Caelestia](https://github.com/caelest
 - Uses the shell's own palette, tokens and animation types, so it follows your wallpaper colours
 - Battery popout: horizontal fill gauge, animated shimmer and green shift while charging
 ## Screenshots
+### Light mode
 [[screenshots/batt_1.png]]
 [[screenshots/notes_1.png]]
 ## Install
