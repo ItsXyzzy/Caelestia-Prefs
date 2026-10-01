@@ -2,33 +2,36 @@
 
 Three additions for the [Caelestia](https://github.com/caelestia-dots/shell) dashboard:
 
-- **Notes tab**: notes that save between restarts
+- **Notes tab**: Notes that you can save to your dashboard
 - **Hourly forecast** on the Weather tab: a temperature graph you scroll with arrows
-- **Battery popout**: a fill gauge that turns green and shimmers while charging
+- **Battery popout**: a fill gauge that turns green and animates while charging
 
+## Screenshots
+![Battery Screenshot](screenshots/batt_1.png)
+![Notes Screenshot](screenshots/note_1.png)
+![Weather Screenshot](screenshots/weat_1.png)
 ## Install
 
 ```bash
-git clone <this repo>
-cd <folder>
+git clone https://github.com/ItsXyzzy/Caelestia-Prefs
+cd Caelestia-Prefs
 ./install.sh
 ```
 
-Then restart the shell. Don't use sudo. It installs into `~/.config/quickshell/caelestia`, copying the system config there first if you don't have one, so package updates won't undo it.
+Then restart the shell. Don't use sudo. It installs into `~/.config/quickshell/caelestia`, copying the system config there first if you don't have one.
 
 ## Uninstall
 
 ```bash
-./uninstall.sh          # keeps your notes
-./uninstall.sh --purge  # deletes them too
+./uninstall.sh          # This keeps your notes
+./uninstall.sh --purge  # This deletes them too
 ```
 
 ## Good to know
 
 - The Weather and Battery files replace the stock ones. Originals are saved as `.bak`. If you've customised either, back it up first.
 - Typing in Notes needs the dashboard to accept keyboard focus, so the installer adds one condition to `ContentWindow.qml`. The whole dashboard now grabs focus while open.
-- The charging green is fixed, not taken from your colour scheme.
-- Needs a recent Caelestia with the Weather tab. Only tested on Arch with Hyprland.
+- Only tested on Cachy with Hyprland.
 
 ## Manual install
 
@@ -39,4 +42,4 @@ Then restart the shell. Don't use sudo. It installs into `~/.config/quickshell/c
 
 ## License
 
-GPL-3.0, since this builds on Caelestia's own code.
+GPL-3.0
