@@ -1,6 +1,5 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Io
 import Caelestia.Config
 import Caelestia.I18n
@@ -70,9 +69,7 @@ Item {
             }
         }
 
-        onLoadFailed: error => {
-            root.notes = [];
-        }
+        onLoadFailed: root.notes = []
     }
 
     Timer {
@@ -91,7 +88,6 @@ Item {
         anchors.fill: parent
         spacing: Tokens.spacing.medium
 
-        // Sidebar: note list
         StyledRect {
             Layout.preferredWidth: 260
             Layout.fillHeight: true
@@ -315,7 +311,6 @@ Item {
             }
         }
 
-        // Editor
         StyledRect {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -376,10 +371,11 @@ Item {
                     type: StyledTextField.Filled
                     radius: Tokens.rounding.large
                     text: root.selectedNote ? root.selectedNote.title : ""
-                    placeholderText: Tr.tr("Title")
+                    // The floating "Title" label only shows while the field is empty.
+                    placeholderText: text.length === 0 ? Tr.tr("Title") : ""
                     font: Tokens.font.body.builders.large.size(22).weight(Font.DemiBold).build()
                     horizontalPadding: Tokens.padding.medium
-                    verticalPadding: Tokens.padding.large
+                    verticalPadding: text.length === 0 ? Tokens.padding.large : Tokens.padding.medium
                     onTextEdited: root.updateSelected("title", text)
 
                     Keys.onReturnPressed: bodyField.forceActiveFocus()

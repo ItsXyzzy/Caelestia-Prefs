@@ -53,6 +53,10 @@ Item {
     }
 
     readonly property bool charging: [UPowerDeviceState.Charging, UPowerDeviceState.FullyCharged, UPowerDeviceState.PendingCharge].includes(UPower.displayDevice.state)
+    readonly property color chargeFill: "#2e7d32"
+    readonly property color chargeTrack: "#c8e6c9"
+    readonly property color chargeOnTrack: "#1b5e20"
+    readonly property color chargeOnFill: "#e8f5e9"
     property real animPerc: UPower.displayDevice.percentage
 
     implicitWidth: Tokens.sizes.bar.batteryWidth
@@ -69,12 +73,11 @@ Item {
         anchors.right: parent.right
         spacing: Tokens.spacing.medium
 
-        // Tank card
         StyledClippingRect {
             id: tank
 
-            readonly property color baseFillColour: root.charging ? "#2e7d32" : Colours.palette.m3secondary
-            readonly property color baseContainerColour: root.charging ? "#c8e6c9" : Colours.palette.m3secondaryContainer
+            readonly property color baseFillColour: root.charging ? root.chargeFill : Colours.palette.m3secondary
+            readonly property color baseContainerColour: root.charging ? root.chargeTrack : Colours.palette.m3secondaryContainer
 
             Layout.fillWidth: true
             Layout.preferredHeight: 120
@@ -94,9 +97,8 @@ Item {
                 anchors.fill: parent
                 anchors.margins: Tokens.padding.medium
 
-                accentColour: root.charging ? "#1b5e20" : Colours.palette.m3primary
+                accentColour: root.charging ? root.chargeOnTrack : Colours.palette.m3primary
                 textColour: Colours.palette.m3onSurface
-                subTextColour: Colours.palette.m3onSurfaceVariant
 
                 Behavior on accentColour {
                     CAnim {
@@ -123,7 +125,6 @@ Item {
                     }
                 }
 
-                // Charging pulse: a soft light band that sweeps across the filled area
                 Rectangle {
                     id: pulse
 
@@ -174,9 +175,8 @@ Item {
                     anchors.margins: tankLayout.anchors.margins
                     width: tankLayout.width
 
-                    accentColour: root.charging ? "#e8f5e9" : Colours.palette.m3primaryContainer
-                    textColour: root.charging ? "#1b5e20" : Colours.palette.m3onSecondary
-                    subTextColour: root.charging ? "#c8e6c9" : Colours.palette.m3secondaryContainer
+                    accentColour: root.charging ? root.chargeOnFill : Colours.palette.m3primaryContainer
+                    textColour: root.charging ? root.chargeOnFill : Colours.palette.m3onSecondary
 
                     Behavior on accentColour {
                         CAnim {
@@ -411,7 +411,6 @@ Item {
 
         required property color accentColour
         required property color textColour
-        required property color subTextColour
 
         spacing: 0
 
