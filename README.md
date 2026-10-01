@@ -8,7 +8,7 @@ Three additions for the [Caelestia](https://github.com/caelestia-dots/shell) das
 
 ## Screenshots
 ![Battery Screenshot](screenshots/batt_1.png)
-![Notes Screenshot](screenshots/note_1.png)
+![Notes Screenshot](screenshots/notes_1.png)
 ![Weather Screenshot](screenshots/weat_1.png)
 ## Install
 
