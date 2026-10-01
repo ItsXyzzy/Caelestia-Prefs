@@ -6,10 +6,12 @@ Three additions for the [Caelestia](https://github.com/caelestia-dots/shell) das
 - **Hourly forecast** on the Weather tab: a temperature graph you scroll with arrows
 - **Battery popout**: a fill gauge that turns green and animates while charging
 
-## Screenshots
+## Screenshots:
+
 ![Battery Screenshot](screenshots/batt_1.png)
 ![Notes Screenshot](screenshots/notes_1.png)
 ![Weather Screenshot](screenshots/weat_1.png)
+
 ## Install
 
 ```bash
@@ -18,7 +20,12 @@ cd Caelestia-Prefs
 ./install.sh
 ```
 
-Then restart the shell. Don't use sudo. It installs into `~/.config/quickshell/caelestia`, copying the system config there first if you don't have one.
+Then restart the shell using:
+```bash
+caelestia shell -k
+caelestia shell
+```
+It installs into `~/.config/quickshell/caelestia`, copying the system config there first if you don't have one.
 
 ## Uninstall
 
